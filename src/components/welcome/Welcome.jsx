@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import illustration from '../../images/illustration.png'
 import './welcome.css'
+import ExitModal from '../exitModal/ExitModal'
 
 const Welcome = () => {
+  const [open, setOpen] = useState(false)
   return (
     <div className="welcome">
       <div className="welcome__container">
@@ -14,9 +16,15 @@ const Welcome = () => {
             src={illustration}
             alt="illustration"
           />
-          <button className="welcome__content-btn">Выйти</button>
+          <button
+            className="welcome__content-btn"
+            onClick={() => setOpen(true)}
+          >
+            Выйти
+          </button>
         </div>
       </div>
+      <ExitModal active={open} setActive={setOpen} />
     </div>
   )
 }
