@@ -1,5 +1,6 @@
 import React from 'react'
-import main_picture from '../../images/main_picture.png'
+import illustration from '../../images/illustration.png'
+import './welcome.css'
 
 const Welcome = () => {
   return (
@@ -10,8 +11,8 @@ const Welcome = () => {
           <p className="welcome__content-p">Lorby - твой личный репетитор</p>
           <img
             className="welcome__content-img"
-            src={main_picture}
-            alt="main_picture"
+            src={illustration}
+            alt="illustration"
           />
           <button className="welcome__content-btn">Выйти</button>
         </div>
