@@ -1,0 +1,56 @@
+.letter {
+  margin: 0;
+  padding: 0;
+}
+.letter__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+.letter__link {
+  text-decoration: none;
+}
+.letter__arow-text {
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+.letter__container {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.letter__description {
+  width: 421px;
+  height: 404px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.letter__title {
+  font-size: 24px;
+  color: #212121;
+}
+.letter__text {
+  font-size: 20px;
+  color: #767676;
+}
+.letter__text-span {
+  color: #212121;
+}
+.letter__text-svg {
+  font-size: 20px;
+  color: #212121;
+  margin-top: 15px;
+}
+.letter__btn {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #212121;
+  margin-top: 30px;
+  cursor: pointer;
+}

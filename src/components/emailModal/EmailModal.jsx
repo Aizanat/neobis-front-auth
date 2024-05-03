@@ -1,7 +1,7 @@
 import React from 'react'
 import './emailModal.css'
 
-function EmailModal({ active, setActive }) {
+const EmailModal = ({ active, setActive }) => {
   return (
     <>
       {active && (
