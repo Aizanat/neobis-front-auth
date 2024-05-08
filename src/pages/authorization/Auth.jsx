@@ -8,7 +8,7 @@ import { BsEye, BsEyeSlash } from 'react-bootstrap-icons'
 
 const Auth = () => {
   const navigate = useNavigate()
-  const [email, setEmail] = useState('')
+  const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const [searchParams, setSearchParams] = useSearchParams()
   const [show, setShow] = useState(false)
@@ -17,10 +17,13 @@ const Auth = () => {
   const handleLogin = async () => {
     try {
       // Отправка данных на сервер для входа
-      const response = await axios.post('///', {
-        email,
-        password,
-      })
+      const response = await axios.post(
+        'http://164.92.130.84:8080/api/v1/auth/authenticate',
+        {
+          login,
+          password,
+        }
+      )
 
       // Если вход успешен, сохраняем токены в локальном хранилище
       const { accessToken, refreshToken } = response.data
@@ -67,10 +70,10 @@ const Auth = () => {
         <label className="login__form-label">
           <input
             type="text"
-            placeholder="Введите логин (email)"
+            placeholder="Введите логин (login)"
             className="login__form-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
           />
         </label>
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import boy from '../../images/main_picture.png'
-import arow from '../../images/arrow_left.svg'
+import main_picture from '../../images/main_picture.png'
+import arrow from '../../images/arrow_left.svg'
 import './register.css'
 import { Formik, ErrorMessage } from 'formik'
 import * as yup from 'yup'
@@ -47,13 +47,14 @@ function Register() {
     console.log(values)
     const newValues = {
       email: values.email,
+      login: values.login,
       password: values.password,
       verifyPassword: values.confirmPassword,
     }
     try {
       // Отправка данных на сервер
       const response = await axios.post(
-        'https://neobis-auth-project.up.railway.app/api/users/signUp',
+        'http://164.92.130.84:8080/api/v1/auth/register',
         newValues
       )
       console.log(response)
@@ -82,13 +83,13 @@ function Register() {
     <div className="register">
       <Link to={'/'} className="register__link">
         <div className="register__arow">
-          <img src={arow} alt="arow" className="register__arow-img" />
+          <img src={arrow} alt="arow" className="register__arow-img" />
           <p className="register__arow-p">Назад</p>
         </div>
       </Link>
       <div className="register__container">
         <div className="register__img">
-          <img src={boy} alt="" />
+          <img src={main_picture} alt="main_picture" />
         </div>
         <Formik
           initialValues={{
